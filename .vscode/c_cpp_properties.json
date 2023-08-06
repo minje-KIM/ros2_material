@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/rvilab/pcl_ws/install/turtlebot3_gazebo/include/**",
+        "/home/rvilab/rtabmap/install/rtabmap_slam/include/**",
+        "/home/rvilab/rtabmap/install/rtabmap_odom/include/**",
+        "/home/rvilab/rtabmap/install/rtabmap_util/include/**",
+        "/home/rvilab/rtabmap/install/rtabmap_sync/include/**",
+        "/home/rvilab/rtabmap/install/rtabmap_rviz_plugins/include/**",
+        "/home/rvilab/rtabmap/install/rtabmap_conversions/include/**",
+        "/opt/ros/foxy/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
