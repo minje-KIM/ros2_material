@@ -15,10 +15,11 @@ class PointCloudPublisher(Node):
         super().__init__("pcd_publisher")
         #pcd_path = "/home/rvilab/nyu/dep.ply"
         
-        pcd_path = "/home/rvilab/ros2_material/src/pa2/data/result_depth2pcd.ply"
+        pcd_path = "/home/rvilab/ros2_material/src/pa2/data/depth_2_pcd.ply"
         pcd = o3d.io.read_point_cloud(pcd_path)
-        pcd = pcd.random_down_sample(sampling_ratio=0.005)
         #pcd = depth2pcd()
+        #pcd = pcd.random_down_sample(sampling_ratio=0.005)
+
         #o3d.visualization.draw_geometries([pcd])
         #print(type(pcd))
         self.np_pcd = np.asarray(pcd.points)
@@ -27,7 +28,7 @@ class PointCloudPublisher(Node):
 
         self.R = o3d.geometry.get_rotation_matrix_from_xyz([0, 0, np.pi/48])
         self.publisher_ = self.create_publisher(PointCloud2, "sanghyeon_pcd", 10)
-        self.timer_ = self.create_timer(1.0, self.publish_callback)
+        self.timer_ = self.create_timer(1.0/30, self.publish_callback)
 
     def publish_callback(self):
         self.np_pcd = self.np_pcd @ self.R
@@ -43,7 +44,7 @@ def depth2pcd():
     CX_DEPTH = 3.1304475870804731e+02
     CY_DEPTH = 2.3844389626620386e+02
 
-    depth_image = iio.imread('/home/rvilab/nyu/depth/depth11.png')
+    depth_image = iio.imread('/home/rvilab/nyu/depth/depth1.png')
     # get depth image resolution:
     height, width = depth_image.shape
     # compute indices:
