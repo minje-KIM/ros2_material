@@ -9,9 +9,9 @@ class PublishTimeNode(Node):
     def __init__(self):
         super().__init__("pub_time") 
 
-        self.student_name = "panho"
+        self.student_name = "minje"
         self.publisher_ = self.create_publisher(String, "current_time", 10)
-        self.timer_ = self.create_timer(3, self.publish_callback)
+        self.timer_ = self.create_timer(1, self.publish_callback)
         self.get_logger().info("The Timer has been started!")
 
     def publish_callback(self):

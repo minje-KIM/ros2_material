@@ -1,3 +1,15 @@
 /build
 /install
 /log
+*.pyc
+__pycache__/
+*.ply
+__init__.py
+src/pa2/test
+src/pa1/__pycache__/
+
+src/pa1/pa1/__pycache__/
+src/pa1/pa1/__pycache__/Filtering.cpython-38.pyc
+src/pa1/pa1/__pycache__/PublishTimeNode.cpython-38.pyc
+src/pa1/pa1/__pycache__/SubscribeTimeNode.cpython-38.pyc
+src/pa1/pa1/__pycache__/Filtering.cpython-38.pyc
